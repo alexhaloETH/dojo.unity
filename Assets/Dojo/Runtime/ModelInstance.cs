@@ -1,14 +1,11 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using Dojo.Starknet;
 using Dojo.Torii;
-using dojo_bindings;
-using UnityEngine;
-using UnityEngine.Events;
+using System;
+using System.Collections.Generic;
 using System.Numerics;
 using System.Reflection;
+using UnityEngine;
+using UnityEngine.Events;
 
 namespace Dojo
 {
@@ -26,6 +23,12 @@ namespace Dojo
     // Base class for the definition of a model
     public abstract class ModelInstance : MonoBehaviour
     {
+        public struct U256
+        {
+            public BigInteger low;
+            public BigInteger high;
+        }
+
         public UnityEvent OnUpdated = new UnityEvent();
         public Model Model { get; private set; }
 
